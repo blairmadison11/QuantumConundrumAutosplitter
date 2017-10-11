@@ -1,10 +1,16 @@
 // Quantum Conundrum Autosplitter
-// written by blairmadison11
-// version 0.1
-// load remover only
+// Written by blairmadison11
+// Version 0.7 (10/11/2017)
+// Supports: Start, Split, Reset, Load Removal
+// Known issues:
+//   no split on "intro" segment
+//   start will trigger after manual resets during game
 
 state("TryGame-Win32-Shipping", "1, 0, 8623, 0") {
 	bool isLoading: 0xFD2110;
+	bool isInMenu: 0x1000DCC;
+	bool isPlaying: 0xFE3401;
+	byte gameState: 0x1017404;
 }
 
 init {
@@ -12,6 +18,22 @@ init {
 	print(version);
 }
 
-exit { timer.IsGameTimePaused = true; }
+start {
+	return current.isPlaying && !current.isLoading && !current.isInMenu;
+}
 
-isLoading { return current.isLoading; }
+split {
+	return old.gameState == 8 && (current.gameState == 4 || current.gameState == 5 || current.gameState == 9);
+}
+
+isLoading {
+	return current.isLoading;
+}
+
+reset {
+	return old.gameState == 7 && current.gameState == 5;
+}
+
+exit {
+	timer.IsGameTimePaused = true;
+}
