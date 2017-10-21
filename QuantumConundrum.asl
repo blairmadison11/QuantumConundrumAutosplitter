@@ -4,6 +4,7 @@
 // Supports: Start, Split, Reset, Load Removal
 // Known issues:
 //   no split on "intro" segment
+//   no split on final segment (when losing control of movement)
 //   start will trigger after manual resets during game
 
 state("TryGame-Win32-Shipping", "1, 0, 8623, 0") {
