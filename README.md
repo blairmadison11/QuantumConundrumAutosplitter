@@ -1,6 +1,6 @@
 <h1>Quantum Conundrum Autosplitter</h1>
 
-<p>Quantum Conundrum Autosplitter is an add-on script for <a href="http://livesplit.github.io/">LiveSplit</a> that allows the timer to be automatically controlled while playing Quantum Conundrum. It is built into LiveSplit and can be enabled simply by selecting Quantum Conundrum in the Splits Editor.</p>
+<p>Quantum Conundrum Autosplitter is an add-on script for <a href="http://livesplit.github.io/">LiveSplit</a> that allows the timer to be automatically controlled while playing <a href="http://store.steampowered.com/app/200010/Quantum_Conundrum/">Quantum Conundrum</a>. It is built into LiveSplit and can be enabled simply by selecting Quantum Conundrum in the Splits Editor.</p>
 
 <p>Quantum Conundrum Autosplitter currently supports the following features:</p>
 
